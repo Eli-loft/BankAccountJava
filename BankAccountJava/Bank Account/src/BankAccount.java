@@ -3,8 +3,12 @@ public class BankAccount {
 
 
     public void deposit(double amount){
-        balance += amount;
-        
+        if (amount > 0){
+            balance += amount;
+        }
+        else{
+            System.out.println("Error: insufficient deposit amount");
+        }
     }
     public void withdraw(double amount){
         double newBalance = balance - amount;
