@@ -7,7 +7,15 @@ public class BankAccount {
         
     }
     public void withdraw(double amount){
-        balance -= amount;
+        double newBalance = balance - amount;
+        
+        /* Overdraft */
+        if(newBalance >= 0){
+            balance -= amount;
+        }    
+        else{
+            System.out.println("Error: cant withdraw more than balance");
+        }
     }
     
     public double getBalance(){
